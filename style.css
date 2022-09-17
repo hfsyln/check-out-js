@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 1rem;
+    margin: 1rem;
+}
+
+.shippingbox {
+    width: 30vw;
+    height: 100vh;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    margin: 1rem;
+    margin: auto;
+}
+
+.shippingbox img {
+    width: 8vw;
+    height: 20vh;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.firstship, .secondship, .thirtship {
+    display: flex;  
+}
+
+.typeandpay {
+    margin: 1rem;
+}
+.pay {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+}
+
+button {
+    width: 8vw;
+    height: 7vh;
+    margin: auto;
+    border: none;
+    background-color: #f2994a;;
+    border-radius: 10px;
+}
+
+.typeandpay p {
+    padding-top: 0.5rem;
+    color: orangered;
+}
+
+.buttons {
+margin-top: 1rem;
+display: flex;
+width: 8vw;
+height: 6vh;
+border: 0.5px solid grey;
+align-items: center;
+border-radius: 5px;
+}
+
+.buttons button {
+    width: 2vw;
+    height: 4vh;
+    background-color: #9c9292;
+}
+
+@media screen and (max-width:540px){
+
+.shippingbox {
+    width: 90vw;
+}
+
+.shippingbox img {
+    width: 15vw;
+}
+
+button {
+    width: 25vw;
+    height: 7vh;
+    margin: auto;
+    border: none;
+    background-color: #f2994a;;
+    border-radius: 10px;
+}
+
+.buttons {
+    width: 18vw;
+    height: 7vh;
+    border: 0.5px solid grey;
+    align-items: center;
+    border-radius: 5px;
+}
+    
+.buttons button {
+    width: 5vw;
+    height: 4vh;
+    background-color: #9c9292;
+}
+}
