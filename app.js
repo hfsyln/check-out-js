@@ -6,7 +6,7 @@ const total1 = document.querySelectorAll(".total1");
 const shippingtotal = document.querySelector(".shipping");
 const tax = document.querySelector(".tax");
 const totalall = document.querySelector(".alltotal");
-let sum = 0;
+let sum = 147.97;
 let shipping = 15;
 
 
@@ -21,13 +21,13 @@ plusinbutton.forEach((item)=>{
     item.parentElement.nextElementSibling.children[0].textContent =
     (item.previousElementSibling.textContent * item.parentElement.previousElementSibling.children[0].textContent).toFixed(2);
         
-        let sum = 0
-        total1.forEach((item) => {
-            sum += +item.textContent
+        
+            item.parentElement.previousElementSibling.children[0].textContent
+            sum += +item.parentElement.previousElementSibling.children[0].textContent
             shippingtotal.textContent = (sum.toFixed(2) + "$")
             console.log(shippingtotal.textContent)
-        })
-        tax.textContent = (sum *0.18).toFixed(2) + "$"
+
+        tax.textContent = +(sum *0.18).toFixed(2) + "$"
         totalall.textContent = ((sum *0.18) + sum + shipping).toFixed(2) + "$"
     }) 
 
@@ -36,20 +36,22 @@ plusinbutton.forEach((item)=>{
 
 minusinbutton.forEach((item)=> {
     item.addEventListener("click", () => {
-        if (item.nextElementSibling.textContent > 0) {
+        if (item.nextElementSibling.textContent > 1) {
         --item.nextElementSibling.textContent ;
-        }
-    item.parentElement.nextElementSibling.children[0].textContent =
+
+        item.parentElement.nextElementSibling.children[0].textContent =
     (item.nextElementSibling.textContent * item.parentElement.previousElementSibling.children[0].textContent).toFixed(2);
 
-    let sum = 0
-    total1.forEach((item) => {
-        sum += +item.textContent
+    
+        item.parentElement.previousElementSibling.children[0].textContent
+        sum -= +item.parentElement.previousElementSibling.children[0].textContent
         shippingtotal.textContent = (sum.toFixed(2) + "$")
         console.log(shippingtotal.textContent)
-    })
+    
     tax.textContent = (sum *0.18).toFixed(2) + "$"
     totalall.textContent = ((sum *0.18) + sum + shipping).toFixed(2) + "$"
+        }
+    
 
 
     })
