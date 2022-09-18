@@ -1,7 +1,7 @@
 const counters = document.querySelectorAll(".buttons");
 const plusinbutton = document.querySelectorAll(".plusinbutton");
-let sourinbutton = document.querySelectorAll(".sourinbutton");
-let spaan = document.querySelectorAll("span");
+const minusinbutton = document.querySelectorAll(".minusinbutton");
+const spaan = document.querySelectorAll("span");
 const total1 = document.querySelectorAll(".total1");
 const shippingtotal = document.querySelector(".shipping");
 const tax = document.querySelector(".tax");
@@ -34,7 +34,7 @@ plusinbutton.forEach((item)=>{
 })
 
 
-sourinbutton.forEach((item)=> {
+minusinbutton.forEach((item)=> {
     item.addEventListener("click", () => {
         if (item.nextElementSibling.textContent > 0) {
         --item.nextElementSibling.textContent ;
