@@ -19,16 +19,19 @@ totalall.textContent = ((sum *0.18) + sum + shipping).toFixed(2) + "$"
 plusinbutton.forEach((item)=>{
     item.addEventListener("click", () =>{
         ++item.previousElementSibling.textContent;
-    item.parentElement.nextElementSibling.children[0].textContent =
-    (item.previousElementSibling.textContent * item.parentElement.previousElementSibling.children[0].textContent).toFixed(2);
+        
+        item.parentElement.nextElementSibling.children[0].textContent =
+            (item.previousElementSibling.textContent * item.parentElement.previousElementSibling.children[0].textContent).toFixed(2);
         
         
             
-            sum += +item.parentElement.previousElementSibling.children[0].textContent
-            shippingtotal.textContent = (sum.toFixed(2) + "$")
+        sum += +item.parentElement.previousElementSibling.children[0].textContent
+            
+        shippingtotal.textContent = (sum.toFixed(2) + "$")
             //console.log(shippingtotal.textContent)
 
         tax.textContent = +(sum *0.18).toFixed(2) + "$"
+        
         totalall.textContent = ((sum *0.18) + sum + shipping).toFixed(2) + "$"
     }) 
 
@@ -38,30 +41,31 @@ plusinbutton.forEach((item)=>{
 minusinbutton.forEach((item)=> {
     item.addEventListener("click", () => {
         if (item.nextElementSibling.textContent > 1) {
-        --item.nextElementSibling.textContent ;
+            --item.nextElementSibling.textContent ;
 
         item.parentElement.nextElementSibling.children[0].textContent =
-    (item.nextElementSibling.textContent * item.parentElement.previousElementSibling.children[0].textContent).toFixed(2);
+            (item.nextElementSibling.textContent * item.parentElement.previousElementSibling.children[0].textContent).toFixed(2);
 
     
         
         sum -= +item.parentElement.previousElementSibling.children[0].textContent
+        
         shippingtotal.textContent = (sum.toFixed(2) + "$")
         //console.log(shippingtotal.textContent)
     
-    tax.textContent = (sum *0.18).toFixed(2) + "$"
-    totalall.textContent = ((sum *0.18) + sum + shipping).toFixed(2) + "$"
+        tax.textContent = (sum *0.18).toFixed(2) + "$"
+    
+        totalall.textContent = ((sum *0.18) + sum + shipping).toFixed(2) + "$"
+        
         }
 
-    })
-
-
-    
+    })   
 })   
 
 remove.forEach((item) =>{
     item.addEventListener("click",() =>{
-        item.parentElement.parentElement.remove()
+        i
+        tem.parentElement.parentElement.remove()
         
     
 
@@ -70,11 +74,13 @@ remove.forEach((item) =>{
 
 
         shippingtotal.textContent = (sum.toFixed(2) + "$")
-        
+
         tax.textContent = (sum *0.18).toFixed(2) + "$"
+        
         totalall.textContent = ((sum *0.18) + sum + shipping).toFixed(2) + "$"
 
-        console.log(sum)
+        //console.log(sum)
+        
         if (sum.toFixed(2) == 0){
             shipping = 0
             document.querySelector(".ship").innerHTML = 0
